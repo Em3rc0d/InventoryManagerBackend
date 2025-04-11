@@ -1,6 +1,5 @@
-package com.InventoryManager.models.users;
+package com.InventoryManager.models.business;
 
-import org.springframework.data.annotation.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,20 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class User {
-    @Id
+public class Client {
     private int id;
-
     private String name;
-
+    private String phone;
     private String email;
-
-    private String password;
-
-    private ROLE role;
-
-    public static enum ROLE {
-        ADMIN,
-        USER
-    }
+    private String address;
+    private String city;
+    private String state;
+    private String country;
+    private String postalCode;
 }
