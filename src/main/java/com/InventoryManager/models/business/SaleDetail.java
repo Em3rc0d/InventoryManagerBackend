@@ -5,7 +5,6 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 
 import com.InventoryManager.models.utils.STATE;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,15 +14,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class Invoice {
 
-    @Id
-    private int id;
-    private String number;
+public class SaleDetail {
     private Sale sale;
-    private Client client;
-    private String RUC;
-    private STATE state;
-    private Date date;
 
+    private Product product;
+
+    private double unitaryPrice; //Precio al momento de la compra
+    
+    private Integer quantity;
+
+    private double totalAmount;
 }

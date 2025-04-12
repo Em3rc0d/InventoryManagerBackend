@@ -26,6 +26,4 @@ public class Sale {
 
     private Double total;
 
-    private Product[] products;
-
 }
