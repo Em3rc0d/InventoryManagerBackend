@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Sale {
     @Id
-    private int id;
+    private String id;
 
     private Client client;
 

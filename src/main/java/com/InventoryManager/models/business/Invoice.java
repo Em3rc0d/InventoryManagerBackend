@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class Invoice {
 
     @Id
-    private int id;
+    private String id;
     private String number;
     private Sale sale;
     private Client client;

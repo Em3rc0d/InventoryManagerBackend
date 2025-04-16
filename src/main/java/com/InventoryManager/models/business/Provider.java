@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Provider {
     @Id
-    private int id;
+    private String id;
 
     private String direction;
 
