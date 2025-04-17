@@ -1,9 +1,7 @@
 package com.InventoryManager.models.business;
 
-import java.util.Date;
-
-import org.springframework.data.annotation.Id;
-
+import java.time.LocalDate;
+import jakarta.persistence.*;
 import com.InventoryManager.models.utils.STATE;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,13 +12,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
+@Entity
+@Table(name = "sale")
 public class Sale {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 
-    private Date date;
+    private LocalDate date;
 
     private STATE state;
 

@@ -1,6 +1,6 @@
 package com.InventoryManager.models.users;
 
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class User {
     @Id
-    private String id;
+    private Integer id;
 
     private String name;
 

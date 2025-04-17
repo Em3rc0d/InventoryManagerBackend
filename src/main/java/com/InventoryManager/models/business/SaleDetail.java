@@ -1,10 +1,7 @@
 package com.InventoryManager.models.business;
 
-import java.util.Date;
-
-import org.springframework.data.annotation.Id;
-
-import com.InventoryManager.models.utils.STATE;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,15 +11,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-
 public class SaleDetail {
+    @ManyToOne
+    @JoinColumn(name = "sale_id")
     private Sale sale;
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
-    private double unitaryPrice; //Precio al momento de la compra
+    private Double unitaryPrice;
     
     private Integer quantity;
 
-    private double totalAmount;
+    private Double totalAmount;
 }
