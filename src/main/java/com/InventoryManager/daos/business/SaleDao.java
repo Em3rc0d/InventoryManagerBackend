@@ -1,11 +1,12 @@
 package com.InventoryManager.daos.business;
 
-import com.InventoryManager.models.business.Sale;
-import com.InventoryManager.repositories.SaleRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.InventoryManager.models.business.Sale;
+import com.InventoryManager.repositories.SaleRepository;
 
 @Service
 public class SaleDao implements ISaleDao {
@@ -22,4 +23,10 @@ public class SaleDao implements ISaleDao {
     public Sale save(Sale sale){
         return saleRepository.save(sale);
     }
+
+    @Override
+    public Sale getSaleById(Long id){
+        return saleRepository.findById(id).orElseThrow();
+    }
+    
 }

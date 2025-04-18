@@ -1,8 +1,19 @@
 package com.InventoryManager.models.business;
 
 import java.time.LocalDate;
-import jakarta.persistence.*;
+import java.util.List;
+
 import com.InventoryManager.models.utils.STATE;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,4 +40,6 @@ public class Sale {
 
     private Double total;
 
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+    private List<SaleDetail> saleDetails;
 }
